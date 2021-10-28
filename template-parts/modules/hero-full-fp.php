@@ -18,7 +18,7 @@ $tickets_link = get_field('tickets_link');
     <div class="hero__image" style="background-image:url(<?php echo $thumbnail['0']; ?>);"></div>
     <div class="hero__shade"></div>
     <div class="hero__content">
-        <span class="hero__top-title">Our Next Show...</span>
+        <span class="hero__top-title">Our Next Event...</span>
         <div class="hero__title-wrapper">
             <h1 class="hero__title margin-0"><?php the_title(); ?></h1>
         </div>
