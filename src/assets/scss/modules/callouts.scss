@@ -1,0 +1,91 @@
+.callouts{
+    overflow: hidden;
+
+    &--card{
+        margin-left: 0;
+        width: auto;
+
+        &--image{
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.34%;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0 0 30px 0;
+        }
+
+        &--content{
+            padding-left:90px;
+            @include respond(desktop){
+                padding-left: 175px;
+            }
+        }
+
+        &--content--right{
+            padding-left: 0;
+        }
+
+        &--dates{
+            color: #e83b52;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 14px;
+            line-height: 1em;
+            margin: 20px 0 0 0;
+
+        }
+
+        &--title{
+            position: relative;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 2.4rem;
+            line-height: 1em;
+            letter-spacing: normal;
+            text-transform: none;
+            margin: 0 0 20px 0;
+        }
+        &--title--right{
+            position: relative;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 2.4rem;
+            line-height: 1em;
+            letter-spacing: normal;
+            text-transform: none;
+            margin: 0 0 20px 0;
+        }
+
+        &--title::before{
+            content: "";
+            display: block;
+            position: absolute;
+            height: 0;
+            border-top: 2px solid $color-primary;
+            top: 100%;
+            width: auto;
+            top: 50%;
+            right: 100%;
+            margin-right: 10px;
+            width: 55px;
+
+        }
+
+        &--description{
+            font-weight: normal;
+            font-style: normal;
+            letter-spacing: 0;
+            color: #000;
+            margin-bottom: 3rem;
+
+        }
+
+        &--link{
+            padding-bottom: 5rem;
+        }
+
+    }
+}

@@ -1,0 +1,57 @@
+$bg-gray-light: #f2f2f2;
+$color-primary:#E74C3C;
+
+.bg-gray-light{
+    background-color:$bg-gray-light;
+}
+
+.padding-none{
+    padding:0;
+}
+
+.margin-none{
+    margin:0;
+}
+
+.color-primary{
+    color:$color-primary;
+}
+
+.margin-0{
+    margin:0;
+}
+
+.center-content{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.noshow{
+    display: none; 
+}
+
+.row{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.entry-title{
+    
+    font-size: 32px;
+}

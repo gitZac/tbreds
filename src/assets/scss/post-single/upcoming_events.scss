@@ -1,0 +1,38 @@
+.upcoming_events{
+
+    &__header{
+        p,h2{
+            margin:1rem 0;
+        }
+    }
+
+    &__date{
+
+    }
+
+    &__time{
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    &__location{
+        font-weight: 600;
+
+    }
+
+    &__content{
+        margin:0;
+
+    }
+
+    &__directions-link{
+
+    }
+
+    &__price{
+        font-style: italic;
+        color:#000;
+        font-weight: bold;
+    }
+
+}

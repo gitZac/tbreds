@@ -1,0 +1,61 @@
+#thoroughbreds-jumbotron .thoroughbreds-button{
+    margin-bottom: 10px;
+}
+
+
+/*-- 4. Buttons --*/
+.thoroughbreds-button,
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"]{
+    padding: 10px;
+    
+    color: #fff !important;
+    background: #333232;
+    // background: rgba( 200, 200, 200, 0.9 );
+    margin-right: 10px !important;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+
+.thoroughbreds-button.small{
+    font-size: 14px;
+    @include respond(laptop){
+        font-size: 18px;
+    }
+}
+
+.thoroughbreds-button.large{
+    padding: 15px 25px;
+    font-size: 20px;
+}
+
+.thoroughbreds-button:hover{
+    color: #fff;
+    background: #505050;
+}
+
+.thoroughbreds-button.default{
+    color: #fff;
+    background: #C8C8C8;
+    background: rgba( 200, 200, 200, 0.9 );    
+}
+
+.thoroughbreds-button.default:hover{
+    background: #505050;
+    color: #fff;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input[type="submit"] {
+    padding: 10px;
+    color: #fff !important;
+    margin-right: 10px !important;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    border-radius: 0;
+}

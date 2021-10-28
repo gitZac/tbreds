@@ -1,0 +1,33 @@
+//header main (page title) 
+//header secondary (section title)
+//header tertiary (content title)
+//p
+//p bold
+//p italic
+
+.header{
+    &__page-title{
+        font-size: 5rem;
+    }
+
+    &__secondary{
+        font-size:4rem;
+    }
+
+    &__secondary--line{
+        font-size:4rem;
+    }
+
+    &__secondary--line::before{
+        content: "";
+        width: 45px;
+        height: 0;
+        display: block;
+        border-top: 2px solid $color-primary;
+        margin: 0 0 15px 0;
+    }
+
+    &__tertiary{
+        font-size: 1.8rem;
+    }
+}

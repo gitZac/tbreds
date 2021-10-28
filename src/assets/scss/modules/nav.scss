@@ -1,0 +1,77 @@
+#site-navigation{
+    .menu-item a{
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 12px;
+        padding-top: 1rem;
+    }
+
+    .donate-button{
+        background: $color-primary;
+        color: #fff;
+    }
+
+    .donate-button a{
+        font-size: 1.2rem;
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+
+    .donate-button a:after {
+        font-family: FontAwesome;
+        content: "\f054";
+        margin-left: 8px;
+        font-weight: 100;
+        font-size: 1.2rem;
+    }
+}
+
+#site-footer{
+
+}
+
+#authica-social{
+    padding:0 4rem;
+}
+
+.menu-item a{
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 12px;
+}
+
+#thoroughbreds-header.frontpage.sticky .header-inner {
+    height: 80px;
+    background: #000;
+}
+
+#thoroughbreds-header.frontpage.sticky .header-inner #thoroughbreds-logo img {
+    max-height: 75px;
+}
+
+#thoroughbreds-header a, a:visited {
+    color: #fff;
+}
+
+ul.thoroughbreds-nav > li.menu-item.menu-item-has-children > a:after {
+    font-family: FontAwesome;
+    content: "\f078";
+    margin-left: 8px;
+    margin-right: 10px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.slicknav_nav .slicknav_arrow {
+    font-size: .8em;
+    margin: 0 0 0 .4em;
+    color: $color-primary;
+}
+
+.main-navigation ul ul{
+    box-shadow: none;
+}
+
+ul.thoroughbreds-nav ul {
+    padding:15px 0 0 0;
+}

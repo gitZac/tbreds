@@ -1,0 +1,22 @@
+.profile{
+    &__image{
+        overflow: hidden;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 31px;
+    }
+    &__content{
+
+    }
+
+    &__groups{
+        list-style: none;
+        margin:0;
+        padding:0;
+    }
+
+    &__groups--title{
+        margin-top:2rem;
+    }
+}
