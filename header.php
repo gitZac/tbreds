@@ -20,13 +20,13 @@
 
     <body <?php body_class(); ?>>
         
-        <div id="thoroughbreds-search" class="noshow">
+        <!-- <div id="thoroughbreds-search" class="noshow">
             
             <div class="row">
                 
                 <span class="fa fa-search"></span>
                 
-                <?php get_search_form( ); ?>
+                <?php //get_search_form( ); ?>
                 
                 <span class="fa fa-close"></span>
        
@@ -34,7 +34,7 @@
                 
             </div>
             
-        </div>
+        </div> -->
         
         <div id="page" class="hfeed site">
 

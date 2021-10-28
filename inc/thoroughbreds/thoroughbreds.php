@@ -239,7 +239,7 @@ function thoroughbreds_customize_nav($items) {
     return $items;
 }
 
-add_filter('wp_nav_menu_items', 'thoroughbreds_customize_nav');
+//add_filter('wp_nav_menu_items', 'thoroughbreds_customize_nav');
 
 
 function thoroughbreds_custom_css() {

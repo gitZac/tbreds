@@ -5,6 +5,9 @@
     'order' => 'DESC'
 ); 
 $events = new WP_Query($args); 
+
+$tickets_link = get_field('tickets_link');
+
 ?>
 
 <?php if($events->have_posts() ) {  //If events has posts?>
@@ -25,7 +28,7 @@ $events = new WP_Query($args);
         </div>
         <div class="hero__cta">
             <?php if( get_field('tickets_link') ): ?>
-                <a target="_blank" href="<?php echo get_field('tickets_link') ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Get tickets!</a>
+                <a target="_blank" href="<?php echo $tickets_link; ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Get tickets!</a>
             <?php endif; ?>
 
             <a href="<?php the_permalink(); ?>" class="thoroughbreds-button secondary small animated flipInX slide2_button1 delay3">More Info</a>
@@ -38,6 +41,5 @@ $events = new WP_Query($args);
 <?php } else {
 
 get_template_part('template-parts/content-none_events');
-
 
 } ?>
