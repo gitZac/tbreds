@@ -62,7 +62,7 @@ $about_text = get_field('about_text');
                     </div>
 
                     <?php endwhile; wp_reset_postdata(); ?>
-                    
+
                 </div> 
             </section>
             <section class="about">
@@ -78,9 +78,9 @@ $about_text = get_field('about_text');
                         <img src="<?php echo $about_image; ?>">
                     </div>
                     <div class="col-lg-6 about__text">
-                    <p class="text-left font-italic color-default-light">
-                        <?php echo $about_text; ?>
-                    </p>
+                        <p class="text-left font-italic color-default-light">
+                            <?php echo $about_text; ?>
+                        </p>
                     </div>   
                 </div>
             </section>
