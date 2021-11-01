@@ -1,0 +1,14 @@
+.about{
+    &__text{
+        p{
+            margin-top: 5px;
+            padding-top: 0;
+        }
+    }
+}
+
+@media (min-width: 1167px) {
+    .about__text p {
+        margin-top: -8px;
+    }            
+}

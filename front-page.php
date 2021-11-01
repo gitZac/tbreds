@@ -6,49 +6,35 @@
  * @package thoroughbreds
  */
 get_header();
+
+$about_section_title = get_field('about_section_title');
+$about_image = get_field('about_image');
+$about_text = get_field('about_text');
 ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
-        <?php //do_action('thoroughbreds_homepage'); ?>
-
         <div class="container-fluid">
-            <?php get_template_part('template-parts/modules/hero-full-fp'); ?>
-        </div><!-- /.container-fluid-->
 
-        <div class="container-fluid bg-gray-light">
+            <?php get_template_part('template-parts/modules/hero-full-fp'); ?>
+
             <section class="callouts">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="section-title">
                             <h2 class="section__title--title">Shows and Events</h2>
-                        </div><!-- /.section-title-->
+                        </div>
                     </div>
-                </div> <!-- /.row -->
+                </div>
                 <?php get_template_part('template-parts/loop/loop-events-fp'); ?>
-            </section> <!-- /.Callouts -->
-        </div> <!-- /.container-fluid-->
-
-        <div class="container-fluid padding-none">
-            <div class="row">
-                <div class="section-title">
-                    <h2 class="section__title--title">Hire Us!</h2>
-                </div><!-- /.section-title-->
-            </div>
-            <?php get_template_part('template-parts/loop/loop-services') ?>
-        </div><!-- /.container-fluid-->
-
-        <div class="container-fluid bg-gray-light">
+            </section> 
+            <section class="section callouts bg-gray-light">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="section-title">
                             <h2 class="section__title--title">Join the Thoroughbreds!</h2>
-                        </div><!-- /.section-title-->
+                        </div>
                     </div>
-
-                    <section class="section callouts ">
-
 
                     <?php $args = array(
                         'post_type' => 'page',							
@@ -58,6 +44,7 @@ get_header();
                         'offset' => 1,
                         'order' => 'DESC'
                     ); ?>
+
                     <?php $custom = new WP_Query($args); while($custom->have_posts()): $custom->the_post(); $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
 
                     <div class="col-sm-6">
@@ -76,26 +63,43 @@ get_header();
 
                     <?php endwhile; wp_reset_postdata(); ?>
                     
-                </div> <!-- /.row -->
-            </section> <!-- /.Callouts -->
-        </div> <!-- /.container-fluid-->
-        <div class="container-fluid padding-none">
-            <div class="section highlights">
+                </div> 
+            </section>
+            <section class="about">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="section-title">
+                            <h2 class="section__title--title"><?php echo $about_section_title; ?></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 about__video-box">
+                        <img src="<?php echo $about_image; ?>">
+                    </div>
+                    <div class="col-lg-6 about__text">
+                    <p class="text-left font-italic color-default-light">
+                        <?php echo $about_text; ?>
+                    </p>
+                    </div>   
+                </div>
+            </section>
+            <section style="margin-bottom:0;" class="section highlights bg-gray-light mb-0">
                 <div class="row">
                     <div class="section-title">
                         <h2 class="section__title--title">Our Latest Tags</h2>
-                    </div><!-- /.section-title-->
+                    </div>
                 </div>
-
                 <div class="highlights--video">
                     <div class="row">
                         <?php get_template_part('template-parts/loop/loop-video'); ?>
-                    </div> <!-- /.row--full-width-->
-                </div> <!-- /.highlights--video-->
-            </div><!-- /.section.highlights-->
-        </div><!-- /.container-fluid-->
-    </main><!-- #main -->
-</div><!-- #primary -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</div>
 
 
 <?php get_footer(); ?>        
