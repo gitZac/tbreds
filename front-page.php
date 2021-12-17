@@ -18,16 +18,7 @@ $about_text = get_field('about_text');
 
             <?php get_template_part('template-parts/modules/hero-full-fp'); ?>
 
-            <section class="callouts">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="section-title">
-                            <h2 class="section__title--title">Shows and Events</h2>
-                        </div>
-                    </div>
-                </div>
-                <?php get_template_part('template-parts/loop/loop-events-fp'); ?>
-            </section> 
+            <?php get_template_part('template-parts/loop/loop-events-fp'); ?>
             <section class="section callouts bg-gray-light">
                 <div class="row">
                     <div class="col-sm-12">

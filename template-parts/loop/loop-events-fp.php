@@ -6,13 +6,25 @@
     'order' => 'DESC'
 ); 
 $events = new WP_Query($args);
+
+$count = 0;
 ?>
 
-<?php if($events->have_posts() ) {  //If events has posts?>
 
+
+<?php if($events->have_posts() ) : ?>
+
+<section class="callouts">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="section-title">
+                <h2 class="section__title--title">Shows and Events</h2>
+            </div>
+        </div>
+    </div>
     <div class="callouts">
         <div class="row">
-            <?php while($events->have_posts()): $events->the_post(); $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
+            <?php while($events->have_posts()): $events->the_post(); $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); $count++; ?>
             <div class="col-sm-12 col-lg-6">
                 <div class="callouts--card">
                     <div class="callouts--card--image" style="background-image:url(<?php echo $thumbnail['0']; ?>);">
@@ -35,8 +47,6 @@ $events = new WP_Query($args);
         </div><!-- /.row -->
     </div>
 
-<?php } else {
+</section>
 
-get_template_part('template-parts/content-none_events');
-
-} //end else ?>
+<?php endif; ?>
