@@ -9,7 +9,14 @@
 
 <?php if ($events->have_posts() ) { ?>
 
-    <?php while($events->have_posts() ) : $events->the_post(); $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');?>
+    <?php while($events->have_posts() ) : $events->the_post(); $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+        
+    $tickets_link = get_field('tickets_link');
+    $tickets_text = get_field('tickets_text');
+    
+    if(empty($tickets_text)){
+        $tickets_text = 'Get Tickets!';
+    } ?>
 
     <div class="col-sm-6">
         <div class="callouts--card">
@@ -20,9 +27,10 @@
                 <div class="callouts--card--dates"><?php the_field('event_date'); ?></div>
                 <p class="callouts--card--description"><?php the_field('event_description'); ?></p>
                 <div class="callouts--card--link">
-                    <?php if( get_field('tickets_link') ): ?>
-                        <a target="_blank" href="<?php echo get_field('tickets_link') ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Get tickets!</a>
-                    <?php endif; ?>
+                    
+                <?php if( !empty($tickets_link ) ): ?>
+                    <a target="_blank" href="<?php echo $tickets_link; ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3"><?php echo $tickets_text; ?></a>
+                <?php endif; ?>
 
                     <a href="<?php the_permalink(); ?>" class="thoroughbreds-button secondary small animated flipInX slide2_button1 delay3">Learn More</a>
                 </div>
