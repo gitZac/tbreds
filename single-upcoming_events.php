@@ -9,8 +9,7 @@ $map = get_field('event_directions');
 $event_content = get_field('event_page_content');
 $ticket_price = get_field('event_ticket-price');
 $date = get_field('event_date');
-$time = get_field('event_time');
-?>
+$time = get_field('event_time'); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">

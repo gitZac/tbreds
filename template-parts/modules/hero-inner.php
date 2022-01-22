@@ -19,7 +19,7 @@
             <div class="hero__cta">
 
             <?php if(get_post_type() == 'upcoming_events' && !empty($tickets_link)) { ?> 
-                <a href="<?php echo $tickets_link; ?>" target="_blank" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Get Tickets</a>
+                <a href="<?php echo $tickets_link; ?>" target="_blank" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3"><?php if(empty(get_field('tickets_text'))){echo 'Get Tickets!';} else {echo get_field('tickets_text');} ?></a>
             <?php } ?>
             
             </div>
