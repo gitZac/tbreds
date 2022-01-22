@@ -109,3 +109,16 @@
         padding-bottom: 55%;
     }
 }
+
+.hero--inner{
+    @include respond(laptop){
+        padding-bottom: 40%;
+    }
+
+    .hero__content{
+        @include respond(big-desktop){
+            padding: 100px 100px;
+        }
+    }
+
+}

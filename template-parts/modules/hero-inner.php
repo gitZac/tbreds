@@ -2,7 +2,7 @@
     
     $tickets_link = get_field('tickets_link'); ?>
 
-    <section class="hero margin-none">
+    <section class="hero hero--inner margin-none">
         <div class="hero__image" style="background-image:url(<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)) ?>);"></div>
         <div class="hero__shade"></div>
         <div class="hero__content">
