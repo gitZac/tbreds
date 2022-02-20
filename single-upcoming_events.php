@@ -18,9 +18,9 @@ $time = get_field('event_time'); ?>
 
         <div class="row">
             
-            <div class="col-sm-<?php echo thoroughbreds_main_width(); ?>">
+            <div class="event--col col-sm-<?php echo thoroughbreds_main_width(); ?>">
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
                     <header class="upcoming_events__header entry-header">
                         <h2 class="upcoming_events__date color-primary"><?php echo $date; ?>, <span class="upcoming_events__time"><?php echo $time; ?></span></h2>
                         

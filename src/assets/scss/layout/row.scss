@@ -1,3 +1,17 @@
 .row--full-width{
     max-width: 100%;
 }
+
+.article{
+    padding: 5rem 0;
+    margin-bottom: 0;
+}
+
+.event--col{
+
+    @media (min-width:767px){
+        padding:0;
+
+    }
+
+}

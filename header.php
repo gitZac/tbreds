@@ -14,27 +14,20 @@
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYW51PC4CW"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KYW51PC4CW');
+        </script>
 
         <?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?>>
-        
-        <!-- <div id="thoroughbreds-search" class="noshow">
-            
-            <div class="row">
-                
-                <span class="fa fa-search"></span>
-                
-                <?php //get_search_form( ); ?>
-                
-                <span class="fa fa-close"></span>
-       
-                
-                
-            </div>
-            
-        </div> -->
         
         <div id="page" class="hfeed site">
 
@@ -42,7 +35,7 @@
 
             <header id="masthead" class="site-header" role="banner">
 
-                <div id="thoroughbreds-header" class="frontpage<?php //echo is_front_page() ? 'frontpage' : ''; ?>">
+                <div id="thoroughbreds-header" class="frontpage">
 
                     <div class="header-inner">
 
@@ -62,28 +55,17 @@
                                             <p class="site-description <?php echo get_theme_mod('logo_bool', 'on' ) == 'off' ? 'show' : 'hidden'; ?>">
                                                 <?php bloginfo('description'); ?>
                                             </p>
-                                            
-                                        <?php //endif; ?>
-                                        
-                                    </div><!-- .site-branding -->
-
+                                    </div>
                                 </div>
-
                             </div>
                             <div class="col-xs-7">
                                 <div class="thoroughbreds-header-menu">
 
                                     <?php if( class_exists( 'WooCommerce' ) ) : ?>
-                                    
                                         <div class="thoroughbreds-mobile-cart">
-
                                             <a class="thoroughbreds-cart" href="<?php echo function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url(); ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
-
                                         </div>
-                                    
                                     <?php endif; ?>
-                                    
-                                    
                                     <nav id="site-navigation" class="main-navigation" role="navigation">
                                         
                                         <?php
@@ -103,18 +85,9 @@
                                         
 
                                         ?>
-
-
                                     </nav><!-- #site-navigation -->
-
-                                    
                                 </div>
                             </div>
-
-
-
-
-
                         </div>
                     </div>
                 </div>
