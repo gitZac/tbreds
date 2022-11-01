@@ -2,17 +2,9 @@
 
     &--padding{
         padding: 2rem;
+        padding-top: 0;
     }
-
-    &__shade{
-
-    }
-
     color:#fff;
-
-    &__link{
-        //
-    }
 
     &__card{
         position: relative;
@@ -50,10 +42,6 @@
 
     &__card-inner{
         width:100%;
-    }
-
-    &__logo-wrapper{
-        // null
     }
 
     &__logo{
