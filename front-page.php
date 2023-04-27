@@ -10,6 +10,8 @@ get_header();
 $about_section_title = get_field('about_section_title');
 $about_image = get_field('about_image');
 $about_text = get_field('about_text');
+$newsHasPosts = get_posts('post_type=post');
+
 ?>
 
 <div id="primary" class="content-area">
@@ -45,9 +47,9 @@ $about_text = get_field('about_text');
                             <div class="callouts--card--content">
                             <h4 class="callouts--card--title"><?php the_title(); ?></h4>
                             <p class="callouts--card--description"><?php the_field('page_description'); ?></p>
-                            <div class="callouts--card--link">
-                                <a href="<?php the_permalink(); ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Learn More</a>
-                            </div>
+                                <div class="callouts--card--link">
+                                    <a href="<?php the_permalink(); ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Learn More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +77,18 @@ $about_text = get_field('about_text');
                     </div>   
                 </div>
             </section>
-            <section style="margin-bottom:0;" class="section highlights bg-gray-light mb-0">
+
+            <?php if( !empty ( $newsHasPosts ) ) : ?>
+            <section class="callouts bg-gray-light">
+                    <div class="row">
+                        <div class="section-title">
+                            <h2 class="section__title--title">Latest news</h2>
+                        </div>
+                    </div>
+                    <?php get_template_part('template-parts/loop/loop-post'); ?>
+            </section>
+            <?php endif; ?>
+            <section style="margin-bottom:0;" class="section highlights mb-0">
                 <div class="row">
                     <div class="section-title">
                         <h2 class="section__title--title">Our Latest Tags</h2>

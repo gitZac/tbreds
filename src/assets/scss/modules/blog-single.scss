@@ -1,0 +1,14 @@
+.blog-single {
+
+    @include respond(laptop){
+        padding: 5rem 25rem;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 5rem;
+        @include respond(laptop){
+            font-size: 7.2rem;
+        }
+    }
+}

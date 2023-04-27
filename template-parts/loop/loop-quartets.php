@@ -2,8 +2,6 @@
 // Get all the categories
 $categories = get_terms( 'quartet' ); ?>
 
-
-
 <div class="highlights--list">
     <div class="row row--full-width ">
 
