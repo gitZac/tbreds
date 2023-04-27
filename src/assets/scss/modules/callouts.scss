@@ -1,6 +1,11 @@
 .callouts{
     overflow: hidden;
-
+    &__post-date{
+        margin: 0;
+        padding: 1rem 0;
+        font-size: 1.6rem;
+        font-style: italic;
+    }
     &--card{
         margin-left: 0;
         width: auto;
@@ -15,6 +20,9 @@
             background-repeat: no-repeat;
             background-position: center center;
             margin: 0 0 30px 0;
+        }
+        &--image--mb0{
+            margin-bottom: 0;
         }
 
         &--content{
@@ -37,6 +45,8 @@
             margin: 20px 0 0 0;
 
         }
+
+
 
         &--title{
             position: relative;
