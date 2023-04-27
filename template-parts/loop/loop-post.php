@@ -14,7 +14,7 @@
             
         <div class="col-sm-6">
             <div class="callouts--card">
-                <div class="callouts--card--image" style="background-image:url(https://thethoroughbreds.org/wp-content/uploads/2021/11/singing-valentines-quartet.jpeg);">
+                <div class="callouts--card--image" style="background-image:url(<?php echo $thumbnail[0]; ?>);">
                 </div>
                 <div class="callouts--card--content">
                     <h4 class="callouts--card--title"><?php the_title(); ?></h4>
