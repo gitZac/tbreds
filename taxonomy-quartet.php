@@ -12,14 +12,45 @@ get_header();
 
 <?php 
     $_term = get_queried_object('quartet');
-    $image = get_field('header_image_group', $_term);
-    $cta_image_quartet = get_field('cta_image_group', $_term);
-    $tagline = get_field('group_tag_line', $_term); 
-    $content = get_field('page_content_group', $_term);
-    $booking_description = get_field('booking_description', $_term);
 
     $obj_id = get_queried_object_id();
     $current_url = get_term_link( $obj_id ) . '#topshow';
+
+    $tagline = get_field('group_tag_line', $_term); 
+    $content = get_field('page_content_group', $_term);
+    $image = get_field('header_image_group', $_term);
+    $cta_image_quartet = get_field('cta_image_group', $_term);
+    $booking_description = get_field('booking_description', $_term);
+
+    $current_taxonomy = array(
+        'taxonomy'=>'quartet',
+        'field'=> 'slug',
+        'terms' => $_term
+    );
+
+    $videos = new WP_Query( array(
+        'post_type' => 'video',							
+        'tax_query' => array(
+            'relation' => 'OR',
+            $current_taxonomy
+        ),
+    ) ); 
+
+    $events = new WP_Query( array(
+        'post_type' => 'upcoming_events',							
+        'tax_query' => array(
+            'relation' => 'OR',
+            $current_taxonomy
+        ),
+    ) ); 
+
+    $singers = new WP_Query( array(
+        'post_type' => 'singers',							
+        'tax_query' => array(
+            'relation' => 'OR',
+            $current_taxonomy
+        ),
+    ) ); 
 ?>
 
 <div class="container-fluid">
@@ -32,14 +63,17 @@ get_header();
             </div>
             <div class="hero__cta">
                 <a href="<?php $current_url; ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Book <?php single_term_title(); ?></a>
+                <?php if($events->have_posts()) : ?>
                 <a href="#topshow" class="thoroughbreds-button secondary small animated flipInX slide2_button1 delay3">Our Next Performance</a>
+                <?php endif; ?>
+
             </div>
         </div>
     </section>
 </div>
 
 <div class="container-fluid">
-    <section class="content">
+    <section class="content section">
         <div class="row">
             <div class="col-sm-12">
                 <div class="section-title">
@@ -51,7 +85,10 @@ get_header();
     </section>
 
     <!-- Profile Card Loop -->
-    <section class="singers bg-gray-light">
+
+    <?php if($singers->have_posts()) :  ?>
+
+    <section class="singers section">
         <div class="row">
             <h2 class="header__secondary--line">Meet <?php single_term_title(); ?></h2> 
         </div>
@@ -60,8 +97,12 @@ get_header();
         </div>
     </section>
 
+    <?php endif; ?>
+
+    <?php if($events->have_posts()) :  ?>
+
     <!-- Event Loop -->
-    <section class="callouts ">
+    <section class="callouts section">
         <div class="row">
             <h2 class="header__secondary--line">Hear us sing!</h2> 
         </div>
@@ -70,8 +111,13 @@ get_header();
         </div>
     </section>
 
+    <?php endif; ?>
+
     <!-- Video Loop -->
-    <section class="videos bg-gray-light">
+
+    <?php if($videos->have_posts()) :  ?>
+
+    <section class="videos  section">
         <div class="row">
             <h2 class="header__secondary--line">Newest Videos</h2> 
         </div> 
@@ -80,9 +126,11 @@ get_header();
         </div>
     </section>
 
+    <?php endif; ?>
+
     <!-- Booking -->
 
-    <section class="booking ">
+    <section class="booking section">
         <div class="row">
             <h2 class="header__secondary--line">Book <?php single_term_title(); ?>!</h2> 
         </div>
@@ -101,15 +149,25 @@ get_header();
                         <p class="callouts--card--description"><?php echo $booking_description; ?></p>
                         <div class="callouts--card--link">
                             <a href="<?php the_permalink(); ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Our Next Show</a>
-                            <a href="/hire-the-thoroughbreds/hire-a-quartet/" class="thoroughbreds-button secondary small animated flipInX slide2_button1 delay3">More Quartets!</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div> 
-
     </section>
 </div><!-- ./container-fluid -->
 
 <?php get_footer(); ?>
 
+
+<script>
+
+    const sections = document.querySelectorAll(".section");
+
+    for (i = 0; i < sections.length; i++){
+        if(i % 2 !== 0){
+            sections[i].classList.add('bg-gray-light');
+        }
+    }
+
+</script>

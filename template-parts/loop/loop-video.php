@@ -22,11 +22,12 @@
             </div>
             <div class="highlights--video--content">
                 <h4 class="highlights--video--title"><?php the_title(); ?></h4>
-                <p class="highlights--video--description"><?php the_field('video_by'); ?></p>
+                <p class="highlights--video--description"><?php the_field('video_by'); ?></p>   
             </div> <!-- /.card--content -->
         </div> <!-- /.highlights--list-item-->
     </div> <!-- /.col-sm-->
 <?php endwhile; wp_reset_postdata();
+
   } else {
 
     get_template_part('template-parts/content-none_videos');

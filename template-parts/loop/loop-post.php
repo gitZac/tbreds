@@ -13,7 +13,7 @@
 
         <div class="col-sm-6">
             <div class="callouts--card">
-                <div class="callouts--card--image callouts--card--image--mb0    " style="background-image:url(<?php echo $thumbnail[0]; ?>);">
+                <div class="callouts--card--image callouts--card--image--mb0" style="background-image:url(<?php echo $thumbnail[0]; ?>);">
                 </div>
                 <p class="callouts__post-date"><?php echo get_the_date('l F j, Y' ); ?></p>
                 <div class="callouts--card--content">
