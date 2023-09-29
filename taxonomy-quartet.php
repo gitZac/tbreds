@@ -20,6 +20,8 @@ get_header();
     $content = get_field('page_content_group', $_term);
     $image = get_field('header_image_group', $_term);
     $cta_image_quartet = get_field('cta_image_group', $_term);
+    $cta_text = get_field('cta_text', $_term);
+    $cta_link = get_field('cta_link', $_term);
     $booking_description = get_field('booking_description', $_term);
 
     $current_taxonomy = array(
@@ -148,7 +150,7 @@ get_header();
                         <div class="callouts--card--dates"></div>
                         <p class="callouts--card--description"><?php echo $booking_description; ?></p>
                         <div class="callouts--card--link">
-                            <a href="<?php the_permalink(); ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Our Next Show</a>
+                            <a href="<?php echo $cta_link; ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3"><?php echo $cta_text; ?></a>
                         </div>
                     </div>
                 </div>
