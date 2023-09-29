@@ -64,7 +64,7 @@ get_header();
                 <h1 class="margin-0"><?php single_term_title(); ?></h1>
             </div>
             <div class="hero__cta">
-                <a href="<?php $current_url; ?>" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Book <?php single_term_title(); ?></a>
+                <a href="#booking" class="thoroughbreds-button primary small animated flipInX slide2_button1 delay3">Book <?php single_term_title(); ?></a>
                 <?php if($events->have_posts()) : ?>
                 <a href="#topshow" class="thoroughbreds-button secondary small animated flipInX slide2_button1 delay3">Our Next Performance</a>
                 <?php endif; ?>
@@ -132,7 +132,7 @@ get_header();
 
     <!-- Booking -->
 
-    <section class="booking section">
+    <section id="booking" class="booking section">
         <div class="row">
             <h2 class="header__secondary--line">Book <?php single_term_title(); ?>!</h2> 
         </div>
